@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Movie Collector</string>
+    <string name="welcome_to_movie_collector">Welcome to Movie Collector!</string>
+    <string name="instruction_text_1">Fill out the form about a movie you have watched</string>
+    <string name="title_hint">Title</string>
+    <string name="director_hint">Director</string>
+    <string name="year_hint">Year</string>
+    <string name="input_actors_hint">Enter actors separated by commas</string>
+    <string name="review_hint">Review</string>
+    <string name="rating_hint">Rating (1-10)</string>
+    <string name="save_to_collection_txt">Save to Collection</string>
 </resources>
