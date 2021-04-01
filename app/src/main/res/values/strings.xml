@@ -9,4 +9,6 @@
     <string name="review_hint">Review</string>
     <string name="rating_hint">Rating (1-10)</string>
     <string name="save_to_collection_txt">Save to Collection</string>
+    <string name="add_a_movie_txt">Add a Movie</string>
+    <string name="register_movie_txt">Register Movie</string>
 </resources>
