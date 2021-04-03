@@ -46,7 +46,8 @@
         android:text="Favourites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/display_movie_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/display_movie_btn"
+        android:onClick="displayFavouritesActivity"/>
 
     <Button
         android:id="@+id/edit_movie_btn"

@@ -23,4 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, DisplayMovies.class);
         startActivity(intent);
     }
+
+    public void displayFavouritesActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, DisplayFavourites.class);
+        startActivity(intent);
+    }
 }

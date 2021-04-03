@@ -47,6 +47,7 @@ public class DisplayMovies extends AppCompatActivity {
             boolean itemFavourite = cursor.getInt(7) != 0;
 
             movies.add(new Movie(itemID, itemTitle, itemDirector, itemActors, itemReview, itemYear, itemRating, itemFavourite));
+
             count++;
             System.out.println(count);
         } while (cursor.moveToNext());

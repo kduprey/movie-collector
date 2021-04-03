@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-public class MovieListAdapter extends ArrayAdapter<Movie> {
+public class FavouriteListAdapter extends ArrayAdapter<Movie> {
 
     private Context context;
 
@@ -22,7 +22,7 @@ public class MovieListAdapter extends ArrayAdapter<Movie> {
 
     private DatabaseManager db;
 
-    public MovieListAdapter(@NonNull Context context, int resource, @NonNull List<Movie> objects) {
+    public FavouriteListAdapter(@NonNull Context context, int resource, @NonNull List<Movie> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
