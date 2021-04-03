@@ -11,4 +11,7 @@
     <string name="save_to_collection_txt">Save to Collection</string>
     <string name="add_a_movie_txt">Add a Movie</string>
     <string name="register_movie_txt">Register Movie</string>
+    <string name="empty_list_text">No movies in the collection!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

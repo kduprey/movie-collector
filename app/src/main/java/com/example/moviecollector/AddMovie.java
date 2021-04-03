@@ -115,7 +115,7 @@ public class AddMovie extends AppCompatActivity {
             final int RATING = Integer.parseInt(ratingInput.getText().toString());
             final int YEAR = Integer.parseInt(yearInput.getText().toString());
 
-            db.insert(TITLE, YEAR, DIRECTOR, ACTORS, RATING, REVIEW);
+            db.insert(TITLE, YEAR, DIRECTOR, ACTORS, RATING, REVIEW, false);
 
             titleInput.setText("");
             directorInput.setText("");

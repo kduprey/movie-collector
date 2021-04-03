@@ -36,7 +36,8 @@
         android:text="Display Movies"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_movie_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/add_movie_btn"
+        android:onClick="displayMovieActivity"/>
 
     <Button
         android:id="@+id/favourites_btn"

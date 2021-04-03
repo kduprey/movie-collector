@@ -18,6 +18,7 @@ public class DatabaseStarter extends SQLiteOpenHelper {
     public static final String ACTORS = "actors";
     public static final String RATING = "rating";
     public static final String REVIEW = "review";
+    public static final String FAVOURITE = "favourite";
 
 //    Database Information
     public static final String DATABASE_NAME = "MOVIE_COLLECTION.DB";
@@ -33,7 +34,8 @@ public class DatabaseStarter extends SQLiteOpenHelper {
         + DIRECTOR + " TEXT NOT NULL, "
         + ACTORS + " TEXT NOT NULL, "
         + RATING + " INTEGER NOT NULL, "
-        + REVIEW + " TEXT NOT NULL);";
+        + REVIEW + " TEXT NOT NULL, "
+        + FAVOURITE + " BOOLEAN NOT NULL);";
 
     public DatabaseStarter(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

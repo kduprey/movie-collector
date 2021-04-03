@@ -27,7 +27,7 @@ public class DatabaseManager {
         dbHelper.close();
     }
 
-    public void insert(String title, int year, String director, String actors, int rating, String review) {
+    public void insert(String title, int year, String director, String actors, int rating, String review, boolean favourite) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbHelper.TITLE, title);
         contentValue.put(dbHelper.YEAR, year);
@@ -35,12 +35,13 @@ public class DatabaseManager {
         contentValue.put(dbHelper.ACTORS, actors);
         contentValue.put(dbHelper.RATING, rating);
         contentValue.put(dbHelper.REVIEW, review);
+        contentValue.put(dbHelper.FAVOURITE, favourite);
         database.insert(dbHelper.TABLE_NAME, null, contentValue);
     }
 
     public Cursor fetch() {
-        String[] columns = new String[] {dbHelper.ID, dbHelper.TITLE, dbHelper.YEAR, dbHelper.DIRECTOR, dbHelper.ACTORS, dbHelper.RATING, dbHelper.REVIEW};
-        Cursor cursor = database.query(dbHelper.TABLE_NAME, columns, null, null, null, null, null);
+        String[] columns = new String[] {dbHelper.ID, dbHelper.TITLE, dbHelper.YEAR, dbHelper.DIRECTOR, dbHelper.ACTORS, dbHelper.RATING, dbHelper.REVIEW, dbHelper.FAVOURITE};
+        Cursor cursor = database.query(dbHelper.TABLE_NAME, columns, null, null, null, null, dbHelper.TITLE + " ASC");
 
         if (cursor != null) {
             cursor.moveToFirst();
@@ -48,7 +49,7 @@ public class DatabaseManager {
         return cursor;
     }
 
-    public int update(long id, String title, int year, String director, String actors, int rating, String review) {
+    public int update(long id, String title, int year, String director, String actors, int rating, String review, boolean favourite) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbHelper.TITLE, title);
         contentValue.put(dbHelper.YEAR, year);
@@ -56,6 +57,7 @@ public class DatabaseManager {
         contentValue.put(dbHelper.ACTORS, actors);
         contentValue.put(dbHelper.RATING, rating);
         contentValue.put(dbHelper.REVIEW, review);
+        contentValue.put(dbHelper.FAVOURITE, favourite);
 
         int i = database.update(dbHelper.TABLE_NAME, contentValue, dbHelper.ID + " = " + id, null);
         return i;
