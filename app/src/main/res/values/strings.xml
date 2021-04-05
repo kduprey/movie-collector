@@ -14,4 +14,11 @@
     <string name="empty_list_text">No movies in the collection!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_movie_label">Edit the info from the database to your liking</string>
+    <string name="edit_movie_info_label">Edit movie info</string>
+    <string name="return_to_menu_txt">Return to Menu</string>
+    <string name="search_the_collection_label">Search the Collection</string>
+    <string name="enter_a_term_to_search_through_the_database_label">Enter a term to search through the database</string>
+    <string name="enter_search_term_hint">Enter search term</string>
+    <string name="search_label">Search</string>
 </resources>

@@ -1,9 +1,12 @@
 package com.example.moviecollector;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -81,5 +84,9 @@ public class MovieListAdapter extends ArrayAdapter<Movie> {
         return convertView;
     }
 
-
+    @Nullable
+    @Override
+    public Movie getItem(int position) {
+        return super.getItem(position);
+    }
 }

@@ -5,12 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class DisplayMovies extends AppCompatActivity {
+public class RatingsActivity extends AppCompatActivity {
 
     private DatabaseManager db;
 
@@ -22,9 +20,9 @@ public class DisplayMovies extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_movies);
+        setContentView(R.layout.activity_ratings);
 
-        listView = (ListView) findViewById(R.id.list);
+        listView = (ListView) findViewById(R.id.movi);
 
         db = new DatabaseManager(this);
         db.open();

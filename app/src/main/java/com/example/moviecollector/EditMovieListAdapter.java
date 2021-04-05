@@ -1,9 +1,12 @@
 package com.example.moviecollector;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -14,7 +17,7 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-public class FavouriteListAdapter extends ArrayAdapter<Movie> {
+public class EditMovieListAdapter extends ArrayAdapter<Movie> {
 
     private Context context;
 
@@ -22,7 +25,7 @@ public class FavouriteListAdapter extends ArrayAdapter<Movie> {
 
     private DatabaseManager db;
 
-    public FavouriteListAdapter(@NonNull Context context, int resource, @NonNull List<Movie> objects) {
+    public EditMovieListAdapter(@NonNull Context context, int resource, @NonNull List<Movie> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
@@ -53,7 +56,7 @@ public class FavouriteListAdapter extends ArrayAdapter<Movie> {
         TextView movieReview = (TextView) convertView.findViewById(R.id.movie_review_label);
         TextView movieRating = (TextView) convertView.findViewById(R.id.movie_rating_label);
         TextView movieYear = (TextView) convertView.findViewById(R.id.movie_year_label);
-        ToggleButton favouriteBtn = (ToggleButton) convertView.findViewById(R.id.favourite_btn);
+        TextView favouriteLabel = (TextView) convertView.findViewById(R.id.favourite_label);
 
         movieTitle.setText(title);
         movieDirector.setText(director);
@@ -61,25 +64,13 @@ public class FavouriteListAdapter extends ArrayAdapter<Movie> {
         movieReview.setText("Review: " + review);
         movieRating.setText("Rating: " + Integer.toString(rating) + "/10");
         movieYear.setText("Year: " + Integer.toString(year));
-        favouriteBtn.setChecked(favourite);
-        favouriteBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    // The toggle is enabled
-                    db.open();
-                    db.update(id, title, year, director, actors, rating, review, true);
-                    favouriteBtn.setChecked(true);
-                } else {
-                    // The toggle is disabled
-                    db.open();
-                    db.update(id, title, year, director, actors, rating, review, false);
-                    favouriteBtn.setChecked(false);
-                }
-            }
-        });
+
+        if (favourite)
+            favouriteLabel.setText("Favourite");
+        else
+            favouriteLabel.setText("Not a Favourite");
 
         return convertView;
     }
-
 
 }

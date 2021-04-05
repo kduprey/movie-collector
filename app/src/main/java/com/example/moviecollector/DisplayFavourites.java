@@ -15,9 +15,6 @@ public class DisplayFavourites extends AppCompatActivity {
 
     private ListView listView;
 
-    private SimpleCursorAdapter adapter;
-
-
     private ArrayList<Movie> movies = new ArrayList<Movie>();
 
 

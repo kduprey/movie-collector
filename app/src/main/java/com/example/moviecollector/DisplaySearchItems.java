@@ -5,12 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class DisplayMovies extends AppCompatActivity {
+public class DisplaySearchItems extends AppCompatActivity {
 
     private DatabaseManager db;
 
@@ -22,9 +20,11 @@ public class DisplayMovies extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_movies);
+        setContentView(R.layout.activity_display_search_items);
 
-        listView = (ListView) findViewById(R.id.list);
+        String query = getIntent().getStringExtra("query").toLowerCase();
+
+        listView = (ListView) findViewById(R.id.search_list);
 
         db = new DatabaseManager(this);
         db.open();
@@ -43,10 +43,11 @@ public class DisplayMovies extends AppCompatActivity {
             String itemReview = cursor.getString(6);
             boolean itemFavourite = cursor.getInt(7) != 0;
 
-            movies.add(new Movie(itemID, itemTitle, itemDirector, itemActors, itemReview, itemYear, itemRating, itemFavourite));
+            if (itemTitle.toLowerCase().contains(query) || itemDirector.toLowerCase().contains(query) || itemActors.toLowerCase().contains(query)) {
+                movies.add(new Movie(itemID, itemTitle, itemDirector, itemActors, itemReview, itemYear, itemRating, itemFavourite));
+            }
 
-            count++;
-            System.out.println(count);
+
         } while (cursor.moveToNext());
         cursor.close();
 
