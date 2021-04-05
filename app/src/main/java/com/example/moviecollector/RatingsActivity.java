@@ -2,8 +2,11 @@ package com.example.moviecollector;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -22,7 +25,7 @@ public class RatingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ratings);
 
-        listView = (ListView) findViewById(R.id.movi);
+        listView = (ListView) findViewById(R.id.ratings_movies_list);
 
         db = new DatabaseManager(this);
         db.open();
@@ -49,8 +52,19 @@ public class RatingsActivity extends AppCompatActivity {
         cursor.close();
 
 
-        MovieListAdapter adapter = new MovieListAdapter(this, R.layout.movie_item, movies);
+        EditMovieListAdapter adapter = new EditMovieListAdapter(this, R.layout.edit_movie_item, movies);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println("ID: " + id);
+                Movie movieSelected = movies.get((int) id);
+                Intent intent = new Intent(RatingsActivity.this, ShowResults.class);
+                intent.putExtra("movieTitle", movieSelected.getTitle());
+                intent.putExtra("movieYear", Integer.toString(movieSelected.getYear()));
+                startActivity(intent);
+            }
+        });
 
     }
 }

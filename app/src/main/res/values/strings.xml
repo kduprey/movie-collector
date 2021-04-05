@@ -20,5 +20,6 @@
     <string name="search_the_collection_label">Search the Collection</string>
     <string name="enter_a_term_to_search_through_the_database_label">Enter a term to search through the database</string>
     <string name="enter_search_term_hint">Enter search term</string>
-    <string name="search_label">Search</string>
+    <string name="search_label">Find Movie in IMDB</string>
+    <string name="select_a_movie_from_the_list_to_get_the_imdb_ratings_txt">Select a movie from the list to get the IMDB ratings</string>
 </resources>

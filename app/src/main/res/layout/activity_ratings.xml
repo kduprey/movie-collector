@@ -6,12 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".RatingsActivity">
 
-    <ListView
-        android:id="@+id/ratings_movies_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/ratings_text_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/select_a_movie_from_the_list_to_get_the_imdb_ratings_txt"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/ratings_movies_list"
+        android:layout_width="407dp"
+        android:layout_height="585dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratings_text_label"
+        app:layout_constraintVertical_bias="1.0">
+
+    </ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>

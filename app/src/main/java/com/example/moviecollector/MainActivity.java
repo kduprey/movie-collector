@@ -38,4 +38,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, SearchActivity.class);
         startActivity(intent);
     }
+
+    public void displayRatingsMoviesActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, RatingsActivity.class);
+        startActivity(intent);
+    }
 }
